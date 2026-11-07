@@ -92,6 +92,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="helpers\Session.cs" />
     <Compile Include="viewmodels\BooksViewModel.cs" />
     <Compile Include="views\pages\BooksPage.xaml.cs">
       <DependentUpon>BooksPage.xaml</DependentUpon>
