@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Library_CP.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Библиотека им. Горькова" Height="720" Width="1280"
+        Title="Библиотека" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen">
 
     <Grid>
@@ -9,15 +9,34 @@
             <ColumnDefinition Width="220"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <Border Grid.Column="0" Background="#364f6b">
-            <StackPanel Margin="15,30,15,15">
-                <TextBlock Text="ГОРЬКОВКА" Foreground="White" FontSize="24" 
-                           FontWeight="Bold" Margin="0,0,0,40" HorizontalAlignment="Center"/>
-                <Button Content="Книги" Click="BtnBooks_Click" 
-                        Background="#34495E" Foreground="White" Padding="10" 
-                        Margin="0,0,0,10" BorderThickness="0" Cursor="Hand"/>
-            </StackPanel>
+
+        <Border Grid.Column="0" Background="#778773">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="15,30,15,15">
+                    <TextBlock Text="Горьковка" Foreground="#dee9dd" FontSize="24" 
+                               FontWeight="Bold" Margin="0,0,0,40" HorizontalAlignment="Center"/>
+
+                    <Button Content="Каталог книг" Click="BtnBooks_Click" 
+                            Background="#c2ac94" Foreground="White" Padding="10" 
+                            Margin="0,0,0,10" BorderThickness="0" Cursor="Hand"/>
+
+                    <Button Content="Мои книги" Click="BtnMyBooks_Click" 
+                            Background="#c2ac94" Foreground="White" Padding="10" 
+                            Margin="0,0,0,10" BorderThickness="0" Cursor="Hand"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Margin="15,0,15,20">
+                    <TextBlock x:Name="TxtUserName" Text="Пользователь" Foreground="#BDC3C7" 
+                               FontSize="14" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TxtUserRole" Text="Роль" Foreground="#7F8C8D" 
+                               FontSize="12" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                </StackPanel>
+            </Grid>
         </Border>
 
         <Frame Grid.Column="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
