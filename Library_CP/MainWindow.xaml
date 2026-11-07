@@ -12,7 +12,7 @@
         
         <Border Grid.Column="0" Background="#364f6b">
             <StackPanel Margin="15,30,15,15">
-                <TextBlock Text="LIBRARY" Foreground="White" FontSize="24" 
+                <TextBlock Text="ГОРЬКОВКА" Foreground="White" FontSize="24" 
                            FontWeight="Bold" Margin="0,0,0,40" HorizontalAlignment="Center"/>
                 <Button Content="Книги" Click="BtnBooks_Click" 
                         Background="#34495E" Foreground="White" Padding="10" 
