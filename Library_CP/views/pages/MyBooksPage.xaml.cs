@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Library_CP.database;
+using Library_CP.viewmodels;
 
 namespace Library_CP.views.pages
 {
@@ -23,6 +25,7 @@ namespace Library_CP.views.pages
         public MyBooksPage()
         {
             InitializeComponent();
+            DataContext = new BiblioSysDBEntities();
         }
     }
 }
