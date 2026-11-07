@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Library_CP.views.pages;
+using Library_CP.helpers;
 
 namespace Library_CP
 {
@@ -24,12 +25,23 @@ namespace Library_CP
         public MainWindow()
         {
             InitializeComponent();
+
+            if (Session.CurrentUser != null)
+            {
+                TxtUserName.Text = $"{Session.CurrentUser.FirstName} {Session.CurrentUser.LastName}";
+                TxtUserRole.Text = Session.CurrentUser.Roles?.RoleName ?? "Пользователь";
+            }
+
             MainFrame.Navigate(new BooksPage());
         }
 
         private void BtnBooks_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new BooksPage());
+        }
+        private void BtnMyBooks_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new MyBooksPage());
         }
     }
 }
