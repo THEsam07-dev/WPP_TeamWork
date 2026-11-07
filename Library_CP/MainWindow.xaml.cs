@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Library_CP.views.pages;
 
 namespace Library_CP
 {
@@ -23,6 +24,12 @@ namespace Library_CP
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigation(new BooksPage());
+        }
+
+        private void BthBooks_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new BooksPage());
         }
     }
 }
