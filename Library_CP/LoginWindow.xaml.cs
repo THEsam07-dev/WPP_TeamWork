@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Library_CP.database;
+using Library_CP.helpers;
 
 namespace Library_CP
 {
@@ -22,6 +24,35 @@ namespace Library_CP
         public LoginWindow()
         {
             InitializeComponent();
+        }
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string login = TxtLogin.Text.Trim();
+            string password = TxtPassword.Password.Trim();
+
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            {
+                TxtError.Text = "Заполните все поля!";
+                return;
+            }
+
+            using (var db = new BiblioSysDBEntities())
+            {
+                var user = db.Users.FirstOrDefault(u => u.Login == login && u.PasswordHash == password);
+
+                if (user != null)
+                {
+                    Session.CurrentUser = user;
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+
+                    this.Close();
+                }
+                else
+                {
+                    TxtError.Text = "Неверный логин или пароль!";
+                }
+            }
         }
     }
 }
