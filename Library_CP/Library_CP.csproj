@@ -157,6 +157,7 @@
     <Compile Include="database\Writers.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="helpers\ByteArrayToImageConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -210,7 +211,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="helpers\" />
     <Folder Include="models\" />
     <Folder Include="viewmodels\" />
     <Folder Include="views\pages\" />
