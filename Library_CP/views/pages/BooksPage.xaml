@@ -54,8 +54,7 @@
                                     <TextBlock Text="{Binding QuantityInStock, StringFormat='В наличии: {0} шт.'}" 
                                                Foreground="#3498DB" FontWeight="SemiBold" FontSize="13" Margin="0,15,0,0"/>
                                     <Button Content="Забронировать" Command="{Binding DataContext.BorrowBookCommand,RelativeSource={RelativeSource AncestorType=Page}}"
-                                            CommandParameter="{Binding}" Background="#6a8aaf" Foreground="White" BorderThickness="0" Padding="5"
-"                                           Cursor="Hand" FontWeight="SemiBold"/>
+                                            CommandParameter="{Binding}" Background="#6a8aaf" Foreground="White" BorderThickness="0" Padding="5" Cursor="Hand" FontWeight="SemiBold"/>
                                 </StackPanel>
                             </Grid>
                         </Border>
