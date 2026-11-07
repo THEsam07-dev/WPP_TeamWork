@@ -16,7 +16,7 @@
         <TextBlock Text="Пароль" Foreground="#576370" Margin="0,15,0,5"/>
         <TextBlock x:Name="TxtLogin" Padding="10" FontSize="14" BorderBrush="#BDC3C7"/>
 
-        <Button Center="Войти" Click="BtnLogin_Click" Margin="0,30,0,0"
+        <Button Content="Войти" Click="BtnLogin_Click" Margin="0,30,0,0"
          Padding="10" Background="#3498DB" Foreground="White"
          FontSize="16" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand"/>
 
