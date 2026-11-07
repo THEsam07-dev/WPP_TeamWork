@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -18,22 +17,31 @@ namespace Library_CP.viewmodels
             get { return _booksList; }
             set { SetProperty(ref _booksList, value); }
         }
-        public BooksVeiwModel()
-        {
-            LoadBooks();
-        }
+
+        public IRelayCommand LoadBooksCommand { get; }
+        public IRelayCommand<Books> BorrowBookCommand { get; }
+
         public BooksViewModel()
         {
-            using (var db = new LibraryModel())
+            LoadBooksCommand = new RelayCommand(LoadBooks);
+            BorrowBookCommand = new RelayCommand<Books>(BorrowBook);
+
+            LoadBooks();
+        }
+
+        private void LoadBooks()
+        {
+            using (var db = new BiblioSysDBEntities())
             {
                 var booksFromDb = db.Books.ToList();
                 BooksList = new ObservableCollection<Books>(booksFromDb);
             }
         }
 
-        [RelayCommand]
         private void BorrowBook(Books selectedBook)
         {
+            if (selectedBook == null) return;
+
             if (Session.CurrentUser == null)
             {
                 MessageBox.Show("Пожалуйста, войдите в систему!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -72,10 +80,10 @@ namespace Library_CP.viewmodels
                     {
                         bookInDb.QuantityInStock -= 1;
                     }
+
                     db.SaveChanges();
 
                     MessageBox.Show($"Книга «{selectedBook.Title}» успешно забронирована!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-
                     LoadBooks();
                 }
                 catch (Exception ex)

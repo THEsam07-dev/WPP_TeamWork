@@ -24,7 +24,7 @@ namespace Library_CP
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigation(new BooksPage());
+            MainFrame.Navigate(new BooksPage());
         }
 
         private void BthBooks_Click(object sender, RoutedEventArgs e)
