@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library_CP.viewmodels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Library_CP.views.pages
         public BooksPage()
         {
             InitializeComponent();
+            DataContext = new BooksViewModel();//привязка данных
         }
     }
+
 }
