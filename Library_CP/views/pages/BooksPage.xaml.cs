@@ -27,5 +27,4 @@ namespace Library_CP.views.pages
             DataContext = new BooksViewModel();//привязка данных
         }
     }
-
 }
