@@ -97,5 +97,13 @@
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="database\" />
+    <Folder Include="data\" />
+    <Folder Include="helpers\" />
+    <Folder Include="models\" />
+    <Folder Include="viewmodels\" />
+    <Folder Include="views\pages\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
