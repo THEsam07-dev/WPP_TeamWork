@@ -48,5 +48,6 @@ namespace Library_CP
         private void BtnAllLoans_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new AllLoansPage());
         private void BtnManageBooks_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new ManageBooksPage());
         private void BtnManageUsers_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new ManageUsersPage());
+        private void BtnProfile_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new ProfilePage());
     }
 }

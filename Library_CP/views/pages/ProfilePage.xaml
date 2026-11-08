@@ -1,0 +1,74 @@
+﻿<Page x:Class="Library_CP.views.pages.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Личный кабинет">
+
+    <Grid Background="#F5F6FA">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="40" MaxWidth="800" HorizontalAlignment="Left">
+
+                <TextBlock Text="Личный кабинет" FontSize="26" FontWeight="Bold" 
+                           Foreground="#2C3E50" Margin="0,0,0,20"/>
+
+                <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,20"
+                        BorderBrush="#E0E0E0" BorderThickness="1">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" Opacity="0.05" BlurRadius="10" ShadowDepth="2"/>
+                    </Border.Effect>
+                    <StackPanel>
+                        <TextBlock Text="Мои данные" FontSize="18" FontWeight="SemiBold" Foreground="#2C3E50" Margin="0,0,0,15"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="ФИО:" Foreground="#7F8C8D"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding FullName}" FontWeight="SemiBold" Foreground="#2C3E50"/>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Читательский билет:" Foreground="#7F8C8D"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding LibraryCardNumber}" FontWeight="SemiBold" Foreground="#2C3E50"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Логин:" Foreground="#7F8C8D"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Login}" FontWeight="SemiBold" Foreground="#2C3E50"/>
+
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Роль:" Foreground="#7F8C8D"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding RoleName}" FontWeight="SemiBold" Foreground="#3498DB"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="White" CornerRadius="10" Padding="20"
+                        BorderBrush="#E0E0E0" BorderThickness="1">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" Opacity="0.05" BlurRadius="10" ShadowDepth="2"/>
+                    </Border.Effect>
+                    <StackPanel MaxWidth="400" HorizontalAlignment="Left">
+                        <TextBlock Text="Смена пароля" FontSize="18" FontWeight="SemiBold" Foreground="#2C3E50" Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Старый пароль:" Margin="0,5,0,5"/>
+                        <PasswordBox x:Name="TxtOldPassword" Padding="8" FontSize="14"/>
+
+                        <TextBlock Text="Новый пароль:" Margin="0,15,0,5"/>
+                        <PasswordBox x:Name="TxtNewPassword" Padding="8" FontSize="14"/>
+
+                        <TextBlock Text="Повторите новый пароль:" Margin="0,15,0,5"/>
+                        <PasswordBox x:Name="TxtConfirmPassword" Padding="8" FontSize="14"/>
+
+                        <Button Content="Сохранить новый пароль" Click="BtnSavePassword_Click" 
+                                Margin="0,20,0,0" Padding="10" Background="#3498DB" 
+                                Foreground="White" FontSize="14" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
