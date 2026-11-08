@@ -66,6 +66,7 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="viewmodels\AddBookViewModel.cs" />
     <Compile Include="viewmodels\BooksViewModel.cs" />
     <Compile Include="viewmodels\MyBooksViewModel.cs" />
     <Compile Include="views\pages\BooksPage.xaml.cs">
