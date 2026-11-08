@@ -10,7 +10,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Управление пользователями" FontSize="26" FontWeight="Bold" 
-                   Margin="20" Foreground="#2C3E50" Grid.Row="0"/>
+                   Margin="20" Foreground="#404a36" Grid.Row="0"/>
 
         <DataGrid ItemsSource="{Binding UsersList}" AutoGenerateColumns="False" 
                   Margin="20,0,20,20" Grid.Row="1" 
@@ -30,13 +30,13 @@
                                 <Button Content="Сменить роль" 
                                         Command="{Binding DataContext.ToggleRoleCommand, RelativeSource={RelativeSource AncestorType=Page}}" 
                                         CommandParameter="{Binding}"
-                                        Background="#F39C12" Foreground="White" 
+                                        Background="#778773" Foreground="White" 
                                         BorderThickness="0" Padding="5" Margin="0,0,5,0" Cursor="Hand"/>
 
                                 <Button Content="Удалить" 
                                         Command="{Binding DataContext.DeleteUserCommand, RelativeSource={RelativeSource AncestorType=Page}}" 
                                         CommandParameter="{Binding}"
-                                        Background="#E74C3C" Foreground="White" 
+                                        Background="#e7b783" Foreground="White" 
                                         BorderThickness="0" Padding="5" Cursor="Hand"/>
                             </StackPanel>
                         </DataTemplate>

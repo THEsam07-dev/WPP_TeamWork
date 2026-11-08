@@ -16,7 +16,7 @@
         <TextBox x:Name="TxtQuantity" Padding="5" FontSize="14"/>
 
         <Button Content="Сохранить изменения" Click="BtnSave_Click" 
-                Margin="0,30,0,0" Padding="10" Background="#2ECC71" 
+                Margin="0,30,0,0" Padding="10" Background="#aea884" 
                 Foreground="White" FontSize="16" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand"/>
     </StackPanel>
 </Window>

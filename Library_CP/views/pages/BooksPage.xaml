@@ -15,7 +15,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Каталог книг" FontSize="26" FontWeight="Bold" Margin="20,20,20,10" Foreground="#2C3E50" Grid.Row="0"/>
+        <TextBlock Text="Каталог книг" FontSize="26" FontWeight="Bold" Margin="20,20,20,10" Foreground="#404a36" Grid.Row="0"/>
 
         <Border Grid.Row="1" Margin="20,0,20,15" Background="White" CornerRadius="5" BorderBrush="#E0E0E0" BorderThickness="1">
             <Grid>
@@ -70,7 +70,7 @@
                                     <Button Content="Забронировать"
                                             Command="{Binding DataContext.BorrowBookCommand, RelativeSource={RelativeSource AncestorType=Page}}"
                                             CommandParameter="{Binding}"
-                                            Background="#2ECC71" Foreground="White"
+                                            Background="#c2ac94" Foreground="White"
                                             BorderThickness="0" Padding="8,5" Cursor="Hand" FontWeight="SemiBold"
                                             HorizontalAlignment="Left" Width="120" Height="30"/>
                                 </StackPanel>

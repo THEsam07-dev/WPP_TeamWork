@@ -7,8 +7,8 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center" Margin="30">
-            <TextBlock Text="Вход в Library" FontSize="24" FontWeight="Bold" 
-                       Foreground="#2C3E50" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+            <TextBlock Text="Вход в Библиотеку" FontSize="24" FontWeight="Bold" 
+                       Foreground="#404a36" HorizontalAlignment="Center" Margin="0,0,0,30"/>
 
             <TextBlock Text="Логин" Foreground="#7F8C8D" Margin="0,0,0,5"/>
             <TextBox x:Name="TxtLogin" Padding="10" FontSize="14" BorderBrush="#BDC3C7"/>
@@ -18,10 +18,10 @@
 
             <Button Content="Войти" Click="BtnLogin_Click" Margin="0,30,0,0"
                     IsDefault="True"
-                    Padding="10" Background="#3498DB" Foreground="White"
+                    Padding="10" Background="#cee4b9" Foreground="#404a36"
                     FontSize="16" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand"/>
 
-            <TextBlock x:Name="TxtError" Foreground="#E74C3C" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+            <TextBlock x:Name="TxtError" Foreground="#9f5058" HorizontalAlignment="Center" Margin="0,15,0,0"/>
         </StackPanel>
     </Grid>
 </Window>

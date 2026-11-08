@@ -7,7 +7,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="40" MaxWidth="600" HorizontalAlignment="Left">
                 <TextBlock Text="Добавление новой книги" FontSize="26" FontWeight="Bold" 
-                           Foreground="#2C3E50" Margin="0,0,0,20"/>
+                           Foreground="#404a36" Margin="0,0,0,20"/>
 
                 <TextBlock Text="Название книги *" Margin="0,10,0,5"/>
                 <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Padding="10" FontSize="14"/>
@@ -61,12 +61,12 @@
                 <TextBlock Text="Обложка" Margin="0,15,0,5"/>
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Выбрать фото" Click="BtnSelectImage_Click" 
-                            Background="#3498DB" Foreground="White" Padding="10,5" BorderThickness="0" Cursor="Hand"/>
+                            Background="#cee4b9" Foreground="#404a36" Padding="10,5" BorderThickness="0" Cursor="Hand"/>
                     <TextBlock x:Name="TxtImageStatus" Text="Файл не выбран" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="Gray"/>
                 </StackPanel>
 
                 <Button Content="Сохранить книгу" Command="{Binding SaveBookCommand}" 
-                        Margin="0,30,0,0" Padding="15,10" Background="#2ECC71" Foreground="White" 
+                        Margin="0,30,0,0" Padding="15,10" Background="#c2ac94" Foreground="White" 
                         FontSize="16" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand"/>
             </StackPanel>
         </ScrollViewer>

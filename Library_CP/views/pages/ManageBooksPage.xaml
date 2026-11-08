@@ -10,7 +10,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Управление книгами" FontSize="26" FontWeight="Bold" 
-                   Margin="20" Foreground="#2C3E50" Grid.Row="0"/>
+                   Margin="20" Foreground="#404a36" Grid.Row="0"/>
 
         <DataGrid x:Name="BooksGrid" ItemsSource="{Binding BooksList}" AutoGenerateColumns="False" 
                   Margin="20,0,20,20" Grid.Row="1" 

@@ -26,7 +26,7 @@
                             <Button Content="Вернуть" 
                             Command="{Binding DataContext.ReturnBookCommand, RelativeSource={RelativeSource AncestorType=Page}}" 
                             CommandParameter="{Binding}"
-                            Background="#E74C3C" Foreground="White" 
+                            Background="#6b6338" Foreground="White" 
                             BorderThickness="0" Padding="5" Margin="5" Cursor="Hand"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
