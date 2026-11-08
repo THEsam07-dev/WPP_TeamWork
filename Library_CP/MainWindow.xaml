@@ -37,6 +37,9 @@
                     <Button x:Name="BtnManageBooks" Content="Управление книгами" Click="BtnManageBooks_Click" 
                             Background="#F39C12" Foreground="White" Padding="10" 
                             Margin="0,0,0,10" BorderThickness="0" Cursor="Hand" Visibility="Collapsed"/>
+                    <Button x:Name="BtnManageUsers" Content="Управление пользователями" Click="BtnManageUsers_Click" 
+                            Background="#9B59B6" Foreground="White" Padding="10"
+                            Margin="0,0,0,10" BorderThickness="0" Cursor="Hand" Visibility="Collapsed"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Margin="15,0,15,20">

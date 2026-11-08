@@ -50,8 +50,20 @@ namespace Library_CP.viewmodels
                 return;
             }
 
+            if (Quantity <= 0)
+            {
+                MessageBox.Show("Количество должно быть больше нуля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             using (var db = new BiblioSysDBEntities())
             {
+                if (db.Books.Any(b => b.ISBN == ISBN))
+                {
+                    MessageBox.Show("Книга с таким ISBN уже существует в базе!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                
                 try
                 {
                     var newBook = new Books

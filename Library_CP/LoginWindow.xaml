@@ -16,8 +16,9 @@
             <TextBlock Text="Пароль" Foreground="#7F8C8D" Margin="0,15,0,5"/>
             <PasswordBox x:Name="TxtPassword" Padding="10" FontSize="14" BorderBrush="#BDC3C7"/>
 
-            <Button Content="Войти" Click="BtnLogin_Click" Margin="0,30,0,0" 
-                    Padding="10" Background="#3498DB" Foreground="White" 
+            <Button Content="Войти" Click="BtnLogin_Click" Margin="0,30,0,0"
+                    IsDefault="True"
+                    Padding="10" Background="#3498DB" Foreground="White"
                     FontSize="16" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand"/>
 
             <TextBlock x:Name="TxtError" Foreground="#E74C3C" HorizontalAlignment="Center" Margin="0,15,0,0"/>

@@ -1,10 +1,11 @@
-﻿using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Library_CP.database;
 using Library_CP.helpers;
+using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows;
 
 namespace Library_CP.viewmodels
 {
@@ -75,10 +76,21 @@ namespace Library_CP.viewmodels
             {
                 try
                 {
+                    var alreadyBorrowed = db.Orders
+                        .Where(o => o.UserID == Session.CurrentUser.UserID && o.StatusID == 1)
+                        .Join(db.OrderItems, o => o.OrderID, oi => oi.OrderID, (o, oi) => oi)
+                        .Any(oi => oi.BookID == selectedBook.BookID);
+
+                    if (alreadyBorrowed)
+                    {
+                        MessageBox.Show("Вы уже взяли эту книгу. Сначала верните её!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+                        return;
+                    }
+
                     var newOrder = new Orders
                     {
                         UserID = Session.CurrentUser.UserID,
-                        OrderDate = System.DateTime.Now,
+                        OrderDate = DateTime.Now,
                         StatusID = 1
                     };
                     db.Orders.Add(newOrder);
@@ -103,7 +115,7 @@ namespace Library_CP.viewmodels
                     MessageBox.Show($"Книга «{selectedBook.Title}» успешно забронирована!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                     LoadBooks();
                 }
-                catch (System.Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show($"Ошибка при бронировании:\n{ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }

@@ -35,6 +35,7 @@ namespace Library_CP
                     BtnAddBook.Visibility = Visibility.Visible;
                     BtnAllLoans.Visibility = Visibility.Visible;
                     BtnManageBooks.Visibility = Visibility.Visible;
+                    BtnManageUsers.Visibility = Visibility.Visible;
                 }
             }
 
@@ -46,5 +47,6 @@ namespace Library_CP
         private void BtnAddBook_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new AddBookPage());
         private void BtnAllLoans_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new AllLoansPage());
         private void BtnManageBooks_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new ManageBooksPage());
+        private void BtnManageUsers_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new ManageUsersPage());
     }
 }

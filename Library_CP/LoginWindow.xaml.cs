@@ -30,15 +30,15 @@ namespace Library_CP
             string login = TxtLogin.Text.Trim();
             string password = TxtPassword.Password.Trim();
 
-            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
             {
-                TxtError.Text = "Заполните все поля!";
+                TxtError.Text = "Пожалуйста, заполните все поля!";
                 return;
             }
 
             using (var db = new BiblioSysDBEntities())
             {
-                var user = db.Users.FirstOrDefault(u => u.Login == login && u.PasswordHash == password);
+                var user = db.Users.FirstOrDefault(u => u.Login.ToLower() == login.ToLower() && u.PasswordHash == password);
 
                 if (user != null)
                 {

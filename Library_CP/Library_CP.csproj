@@ -73,6 +73,7 @@
     <Compile Include="viewmodels\AllLoansViewModel.cs" />
     <Compile Include="viewmodels\BooksViewModel.cs" />
     <Compile Include="viewmodels\ManageBooksViewModel.cs" />
+    <Compile Include="viewmodels\ManageUsersViewModel.cs" />
     <Compile Include="viewmodels\MyBooksViewModel.cs" />
     <Compile Include="views\pages\AddBookPage.xaml.cs">
       <DependentUpon>AddBookPage.xaml</DependentUpon>
@@ -85,6 +86,9 @@
     </Compile>
     <Compile Include="views\pages\ManageBooksPage.xaml.cs">
       <DependentUpon>ManageBooksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\pages\ManageUsersPage.xaml.cs">
+      <DependentUpon>ManageUsersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="views\pages\MyBooksPage.xaml.cs">
       <DependentUpon>MyBooksPage.xaml</DependentUpon>
@@ -180,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="views\pages\ManageBooksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\pages\ManageUsersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
