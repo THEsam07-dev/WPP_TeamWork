@@ -1,0 +1,22 @@
+﻿<Window x:Class="Library_CP.EditBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование книги" Height="400" Width="400"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Background="#F5F6FA">
+
+    <StackPanel Margin="20">
+        <TextBlock Text="Название:" Margin="0,10,0,5"/>
+        <TextBox x:Name="TxtTitle" Padding="5" FontSize="14"/>
+
+        <TextBlock Text="ISBN:" Margin="0,10,0,5"/>
+        <TextBox x:Name="TxtISBN" Padding="5" FontSize="14"/>
+
+        <TextBlock Text="Количество в наличии:" Margin="0,10,0,5"/>
+        <TextBox x:Name="TxtQuantity" Padding="5" FontSize="14"/>
+
+        <Button Content="Сохранить изменения" Click="BtnSave_Click" 
+                Margin="0,30,0,0" Padding="10" Background="#2ECC71" 
+                Foreground="White" FontSize="16" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand"/>
+    </StackPanel>
+</Window>

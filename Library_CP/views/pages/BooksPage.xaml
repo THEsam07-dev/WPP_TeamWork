@@ -11,12 +11,35 @@
     <Grid Background="#F5F6FA">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Каталог книг" FontSize="26" FontWeight="Bold" Margin="20" Foreground="#2C3E50" Grid.Row="0"/>
+        <TextBlock Text="Каталог книг" FontSize="26" FontWeight="Bold" Margin="20,20,20,10" Foreground="#2C3E50" Grid.Row="0"/>
 
-        <ScrollViewer Grid.Row="1" Margin="20,0,20,20" VerticalScrollBarVisibility="Auto">
+        <Border Grid.Row="1" Margin="20,0,20,15" Background="White" CornerRadius="5" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Grid>
+                <TextBlock Text="🔍 Поиск по названию или автору..." Foreground="Gray" VerticalAlignment="Center" Margin="10,0,0,0" IsHitTestVisible="False">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SearchText}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding SearchText}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                     Background="Transparent" BorderThickness="0" Padding="10" FontSize="14" />
+            </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Row="2" Margin="20,0,20,20" VerticalScrollBarVisibility="Auto">
             <ItemsControl ItemsSource="{Binding BooksList}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -27,12 +50,8 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border Width="220" Height="380" Margin="0,0,20,20" 
-                                Background="White" CornerRadius="10" 
-                                BorderBrush="#E0E0E0" BorderThickness="1">
-                            <Border.Effect>
-                                <DropShadowEffect Color="Black" Opacity="0.1" BlurRadius="10" ShadowDepth="3"/>
-                            </Border.Effect>
-
+                            Background="White" CornerRadius="10" 
+                            BorderBrush="#E0E0E0" BorderThickness="1">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="250"/>
@@ -40,21 +59,19 @@
                                 </Grid.RowDefinitions>
 
                                 <Border Grid.Row="0" CornerRadius="10,10,0,0" ClipToBounds="True" Background="#EAEAEA">
-                                    <Image Source="{Binding CoverImage, Converter={StaticResource ImgConverter}}" 
-                                           Stretch="UniformToFill"/>
+                                    <Image Source="{Binding CoverImage, Converter={StaticResource ImgConverter}}" Stretch="UniformToFill"/>
                                 </Border>
 
                                 <StackPanel Grid.Row="1" Margin="15">
-                                    <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="15" 
-                                               Foreground="#2C3E50" TextWrapping="Wrap" MaxHeight="45" TextTrimming="CharacterEllipsis"/>
+                                    <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="15" Foreground="#2C3E50" TextWrapping="Wrap" MaxHeight="45" TextTrimming="CharacterEllipsis"/>
+                                    <TextBlock Text="{Binding Writers.WriterName}" Foreground="#7F8C8D" FontSize="13" Margin="0,5,0,0" TextTrimming="CharacterEllipsis"/>
+                                    <TextBlock Text="{Binding QuantityInStock, StringFormat='В наличии: {0} шт.'}" Foreground="#3498DB" FontWeight="SemiBold" FontSize="13" Margin="0,10,0,10"/>
 
-                                    <TextBlock Text="{Binding Writers.WriterName}" Foreground="#7F8C8D" 
-                                               FontSize="13" Margin="0,5,0,0" TextTrimming="CharacterEllipsis"/>
-
-                                    <TextBlock Text="{Binding QuantityInStock, StringFormat='В наличии: {0} шт.'}" 
-                                               Foreground="#3498DB" FontWeight="SemiBold" FontSize="13" Margin="0,15,0,0"/>
-                                    <Button Content="Забронировать" Command="{Binding DataContext.BorrowBookCommand, RelativeSource={RelativeSource AncestorType=Page}}"
-                                            CommandParameter="{Binding}" Background="#2ECC71" Foreground="White" BorderThickness="0" Padding="5" Cursor="Hand" FontWeight="SemiBold"/>
+                                    <Button Content="Забронировать" 
+                                        Command="{Binding DataContext.BorrowBookCommand, RelativeSource={RelativeSource AncestorType=Page}}" 
+                                        CommandParameter="{Binding}"
+                                        Background="#2ECC71" Foreground="White" 
+                                        BorderThickness="0" Padding="5" Cursor="Hand" FontWeight="SemiBold"/>
                                 </StackPanel>
                             </Grid>
                         </Border>
