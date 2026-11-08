@@ -26,6 +26,8 @@ namespace Library_CP
         {
             InitializeComponent();
 
+            this.Closed += MainWindow_Closed;
+
             if (Session.CurrentUser != null)
             {
                 TxtUserName.Text = $"{Session.CurrentUser.FirstName} {Session.CurrentUser.LastName}";
@@ -49,5 +51,26 @@ namespace Library_CP
         private void BtnManageBooks_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new ManageBooksPage());
         private void BtnManageUsers_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new ManageUsersPage());
         private void BtnProfile_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new ProfilePage());
+
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Вы уверены, что хотите выйти из аккаунта?", "Выход", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Session.CurrentUser = null;
+
+                LoginWindow loginWindow = new LoginWindow();
+                Application.Current.MainWindow = loginWindow;
+                loginWindow.Show();
+
+                this.Close();
+            }
+        }
+
+        private void MainWindow_Closed(object sender, System.EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

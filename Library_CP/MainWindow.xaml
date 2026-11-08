@@ -50,6 +50,9 @@
                                FontSize="14" FontWeight="SemiBold" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="TxtUserRole" Text="Роль" Foreground="#7F8C8D" 
                                FontSize="12" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                    <Button Content="Выйти" Click="BtnLogout_Click"
+                            Background="#ede4b1" Foreground="White" Padding="10"
+                            Margin="0,15,0,0" BorderThickness="0" Cursor="Hand" FontWeight="SemiBold"/>
                 </StackPanel>
             </Grid>
         </Border>
