@@ -30,18 +30,17 @@ namespace Library_CP
             {
                 TxtUserName.Text = $"{Session.CurrentUser.FirstName} {Session.CurrentUser.LastName}";
                 TxtUserRole.Text = Session.CurrentUser.Roles?.RoleName ?? "Пользователь";
+                if (Session.CurrentUser.RoleID == 1)
+                {
+                    BtnAddBook.Visibility = Visibility.Visible;
+                }
             }
 
             MainFrame.Navigate(new BooksPage());
         }
 
-        private void BtnBooks_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new BooksPage());
-        }
-        private void BtnMyBooks_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new MyBooksPage());
-        }
+        private void BtnBooks_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new BooksPage());
+        private void BtnMyBooks_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new MyBooksPage());
+        private void BtnAddBook_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new AddBookPage());
     }
 }
