@@ -67,8 +67,15 @@
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="viewmodels\AddBookViewModel.cs" />
+    <Compile Include="viewmodels\AllLoansViewModel.cs" />
     <Compile Include="viewmodels\BooksViewModel.cs" />
     <Compile Include="viewmodels\MyBooksViewModel.cs" />
+    <Compile Include="views\pages\AddBookPage.xaml.cs">
+      <DependentUpon>AddBookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\pages\AllLoansPage.xaml.cs">
+      <DependentUpon>AllLoansPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\pages\BooksPage.xaml.cs">
       <DependentUpon>BooksPage.xaml</DependentUpon>
     </Compile>
@@ -149,6 +156,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="views\pages\AddBookPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\pages\AllLoansPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\pages\BooksPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

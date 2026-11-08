@@ -44,8 +44,8 @@ namespace Library_CP
                 {
                     Session.CurrentUser = user;
                     MainWindow mainWindow = new MainWindow();
+                    Application.Current.MainWindow = mainWindow;
                     mainWindow.Show();
-
                     this.Close();
                 }
                 else

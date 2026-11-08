@@ -1,0 +1,74 @@
+﻿<Page x:Class="Library_CP.views.pages.AddBookPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Добавить книгу">
+
+    <Grid Background="#F5F6FA">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="40" MaxWidth="600" HorizontalAlignment="Left">
+                <TextBlock Text="Добавление новой книги" FontSize="26" FontWeight="Bold" 
+                           Foreground="#2C3E50" Margin="0,0,0,20"/>
+
+                <TextBlock Text="Название книги *" Margin="0,10,0,5"/>
+                <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Padding="10" FontSize="14"/>
+
+                <TextBlock Text="ISBN *" Margin="0,10,0,5"/>
+                <TextBox Text="{Binding ISBN, UpdateSourceTrigger=PropertyChanged}" Padding="10" FontSize="14"/>
+
+                <Grid Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Автор *" Margin="0,0,0,5"/>
+                        <ComboBox ItemsSource="{Binding WritersList}" SelectedItem="{Binding SelectedWriter}" 
+                                  DisplayMemberPath="WriterName" Padding="10" FontSize="14"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Издательство *" Margin="0,0,0,5"/>
+                        <ComboBox ItemsSource="{Binding PublishersList}" SelectedItem="{Binding SelectedPublisher}" 
+                                  DisplayMemberPath="PublisherName" Padding="10" FontSize="14"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Жанр *" Margin="0,0,0,5"/>
+                        <ComboBox ItemsSource="{Binding GenresList}" SelectedItem="{Binding SelectedGenre}" 
+                                  DisplayMemberPath="GenreName" Padding="10" FontSize="14"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Количество (шт.)" Margin="0,0,0,5"/>
+                        <TextBox Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Padding="10" FontSize="14"/>
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock Text="Описание" Margin="0,10,0,5"/>
+                <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" 
+                         Padding="10" FontSize="14" Height="80" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+                <TextBlock Text="Обложка" Margin="0,15,0,5"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Выбрать фото" Click="BtnSelectImage_Click" 
+                            Background="#3498DB" Foreground="White" Padding="10,5" BorderThickness="0" Cursor="Hand"/>
+                    <TextBlock x:Name="TxtImageStatus" Text="Файл не выбран" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="Gray"/>
+                </StackPanel>
+
+                <Button Content="Сохранить книгу" Command="{Binding SaveBookCommand}" 
+                        Margin="0,30,0,0" Padding="15,10" Background="#2ECC71" Foreground="White" 
+                        FontSize="16" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

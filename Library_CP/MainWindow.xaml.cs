@@ -33,6 +33,7 @@ namespace Library_CP
                 if (Session.CurrentUser.RoleID == 1)
                 {
                     BtnAddBook.Visibility = Visibility.Visible;
+                    BtnAllLoans.Visibility = Visibility.Visible;
                 }
             }
 
@@ -42,5 +43,6 @@ namespace Library_CP
         private void BtnBooks_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new BooksPage());
         private void BtnMyBooks_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new MyBooksPage());
         private void BtnAddBook_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new AddBookPage());
+        private void BtnAllLoans_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new AllLoansPage());
     }
 }
