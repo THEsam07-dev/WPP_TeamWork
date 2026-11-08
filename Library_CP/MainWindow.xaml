@@ -18,6 +18,10 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Margin="15,30,15,15">
+                    <Image Source="/Images/logo.png" 
+                           Width="50" Height="50" 
+                           Margin="0,0,0,15" 
+                           HorizontalAlignment="Center"/>
                     <TextBlock Text="Горьковка" Foreground="#dee9dd" FontSize="24" 
                                FontWeight="Bold" Margin="0,0,0,40" HorizontalAlignment="Center"/>
 
@@ -48,7 +52,7 @@
                 <StackPanel Grid.Row="1" Margin="15,0,15,20">
                     <TextBlock x:Name="TxtUserName" Text="Пользователь" Foreground="#BDC3C7" 
                                FontSize="14" FontWeight="SemiBold" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="TxtUserRole" Text="Роль" Foreground="#7F8C8D" 
+                    <TextBlock x:Name="TxtUserRole" Text="Роль" Foreground="#a0afb0" 
                                FontSize="12" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                     <Button Content="Выйти" Click="BtnLogout_Click"
                             Background="#ede4b1" Foreground="White" Padding="10"
